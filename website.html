@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEasy - E-commerce Demo</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-50 font-sans">
+    <!-- Header -->
+    <header class="bg-white shadow">
+        <div class="container mx-auto flex justify-between items-center py-4 px-6">
+            <h1 class="text-2xl font-bold text-blue-600">ShopEasy</h1>
+            <div class="flex items-center space-x-4">
+                <button class="relative" id="cart-btn">
+                    <svg class="w-7 h-7 text-gray-700" fill="none" stroke="currentColor" stroke-width="2"
+                        viewBox="0 0 24 24">
+                        <path d="M3 3h2l.4 2M7 13h10l4-8H5.4" stroke-linecap="round" stroke-linejoin="round" />
+                        <circle cx="9" cy="21" r="1" />
+                        <circle cx="20" cy="21" r="1" />
+                    </svg>
+                    <span id="cart-count"
+                        class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full px-1">0</span>
+                </button>
+                <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Sign In</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-blue-100 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-blue-800">Welcome to ShopEasy</h2>
+            <p class="text-lg text-blue-700 mb-6">Your one-stop shop for the latest gadgets and accessories!</p>
+            <a href="#products"
+                class="bg-blue-600 text-white px-6 py-3 rounded shadow hover:bg-blue-700 transition">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section id="products" class="container mx-auto px-6 py-12">
+        <h3 class="text-2xl font-semibold mb-8 text-gray-800 text-center">Featured Products</h3>
+        <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            <!-- Product 1 -->
+            <div class="bg-white rounded-lg shadow hover:shadow-lg transition p-4 flex flex-col items-center">
+                <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=400&q=80"
+                    alt="Headphones" class="w-32 h-32 object-cover mb-4 rounded">
+                <h4 class="font-semibold text-lg mb-2">Wireless Headphones</h4>
+                <p class="text-blue-600 font-bold mb-2">$59.99</p>
+                <button onclick="addToCart()"
+                    class="mt-auto bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 w-full">Add to
+                    Cart</button>
+            </div>
+            <!-- Product 2 -->
+            <div class="bg-white rounded-lg shadow hover:shadow-lg transition p-4 flex flex-col items-center">
+                <img src="https://images.unsplash.com/photo-1512499617640-c2f999098c01?auto=format&fit=crop&w=400&q=80"
+                    alt="Smart Watch" class="w-32 h-32 object-cover mb-4 rounded">
+                <h4 class="font-semibold text-lg mb-2">Smart Watch</h4>
+                <p class="text-blue-600 font-bold mb-2">$89.99</p>
+                <button onclick="addToCart()"
+                    class="mt-auto bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 w-full">Add to
+                    Cart</button>
+            </div>
+            <!-- Product 3 -->
+            <div class="bg-white rounded-lg shadow hover:shadow-lg transition p-4 flex flex-col items-center">
+                <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80"
+                    alt="Camera" class="w-32 h-32 object-cover mb-4 rounded">
+                <h4 class="font-semibold text-lg mb-2">Digital Camera</h4>
+                <p class="text-blue-600 font-bold mb-2">$129.99</p>
+                <button onclick="addToCart()"
+                    class="mt-auto bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 w-full">Add to
+                    Cart</button>
+            </div>
+            <!-- Product 4 -->
+            <div class="bg-white rounded-lg shadow hover:shadow-lg transition p-4 flex flex-col items-center">
+                <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
+                    alt="Bluetooth Speaker" class="w-32 h-32 object-cover mb-4 rounded">
+                <h4 class="font-semibold text-lg mb-2">Bluetooth Speaker</h4>
+                <p class="text-blue-600 font-bold mb-2">$39.99</p>
+                <button onclick="addToCart()"
+                    class="mt-auto bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 w-full">Add to
+                    Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t py-6 mt-12">
+        <div class="container mx-auto px-6 text-center text-gray-600">
+            &copy; 2025 ShopEasy. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- JS for Cart Counter -->
+    <script>
+        let cartCount = 0;
+        function addToCart() {
+            cartCount++;
+            document.getElementById('cart-count').textContent = cartCount;
+        }
+    </script>
+</body>
+
+</html>
